@@ -31,10 +31,10 @@ public class RemovalsObjects {
     {
         this.driver=driver;
     }
-    public void openBrowser() throws InterruptedException
+    public void openBrowser(String url) throws InterruptedException
     {
         Thread.sleep(2000);
-        driver.navigate().to("http://qa1.bystored.com/removals");
+        driver.navigate().to(url+"removals");
         driver.manage().window().maximize();
     }
     public void enterDataforHappyFlow(String name,String email,String phonenumber) throws InterruptedException

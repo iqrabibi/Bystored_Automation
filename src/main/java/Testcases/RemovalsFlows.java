@@ -13,6 +13,7 @@ public class RemovalsFlows extends Main{
 
    // WebDriver driver;
     RemovalsObjects ro;
+    String url=getUrl();
     public String name="iqra";
     public String email="iqrabibi25@yahoo.com";
     public String invalidEmail="yahoo.com";
@@ -35,7 +36,7 @@ public class RemovalsFlows extends Main{
     {
 
         ro = new RemovalsObjects(driver);
-        ro.openBrowser();
+        ro.openBrowser(url);
         ro.enterDataforHappyFlow(name, email, phonenumber);
         Thread.sleep(2000);
         actualForRemovalhappyFlow = ro.submit();
@@ -52,14 +53,14 @@ public class RemovalsFlows extends Main{
     public void removalForInvalidEmail() throws InterruptedException
     {
         ro = new RemovalsObjects(driver);
-        ro.openBrowser();
+        ro.openBrowser(url);
         Thread.sleep(2000);
        actualForInvalidEmailForRemovals= ro.enterDataForInvalidEmail(name,invalidEmail,phonenumber);
 
         Thread.sleep(2000);
 
         Assert.assertEquals(""+actualForInvalidEmailForRemovals,""+expectedForInvalidEmailRemovals);
-        System.out.print("\n Actual For invalid Email for login\n"+actualForInvalidEmailForRemovals+"\n Expected For invalid Email for login\n"+expectedForInvalidEmailRemovals);
+        System.out.print("\n Actual For invalid Email for Removals\n"+actualForInvalidEmailForRemovals+"\n Expected For invalid Email for Removals\n"+expectedForInvalidEmailRemovals);
         Thread.sleep(2000);
     }
 
@@ -67,7 +68,7 @@ public class RemovalsFlows extends Main{
     public void removalForInvalidPhoneNumber() throws InterruptedException
     {
         ro = new RemovalsObjects(driver);
-        ro.openBrowser();
+        ro.openBrowser(url);
         Thread.sleep(2000);
         actualForInvalidPhoneNumberForRemovals= ro.enterDataForInvalidPhoneNumber(name,email,invalidPhoneNumber);
 
@@ -82,7 +83,7 @@ public class RemovalsFlows extends Main{
     public void removalClickHere() throws InterruptedException
     {
         ro = new RemovalsObjects(driver);
-        ro.openBrowser();
+        ro.openBrowser(url);
         Thread.sleep(2000);
         actualForClickHere=ro.clickhere();
        Assert.assertTrue(actualForClickHere);
