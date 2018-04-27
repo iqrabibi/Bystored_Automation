@@ -1,0 +1,176 @@
+package PageObjects;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+/**
+ * Created by VenD on 4/16/2018.
+ */
+public class loginObjects {
+
+    public static By loginButton=By.linkText("LOGIN");
+    public static By loginEmail= By.name("email");
+    public static By loginPassword=By.name("password");
+    public static By loginSubmitButton=By.id("btnLoginSubmit");
+    public static By forgetInvalidEmailDetector=By.id("forgotMsg");
+    public static By invalidEmailforLogin=By.id("loginErrorMsg");
+    public String actualForInvalidEmailForLogin;
+    public String actualForInvalidPasswordForLogin;
+
+    //public String email;
+    public String password;
+    public static By forgetPassword=By.id("forgotPassLink");
+    public static By forgotEmail=By.name("forgotEmail");
+    public static By forgotLoader=By.xpath("//*[@id=\"forgotModal\"]/div/div/div[2]/div/form/div[4]/span/button");
+    public static By forgotCross=By.xpath("//*[@id=\"forgotModal\"]/div/div/div[1]/button/span");
+    public static By successMessage=By.id("successMsg");
+    public static By homeclass=By.linkText("LOGOUT");
+    public String response;
+    public String res;
+    public boolean logoutButton;
+    public boolean invalidEmailForForgetPasswordText;
+
+
+
+    WebDriver driver;
+
+    public loginObjects(WebDriver driver)
+
+
+    {
+        this.driver=driver;
+    }
+
+    public void openLoginPage() throws InterruptedException{
+
+
+        driver.navigate().to("http://qa1.bystored.com/login");
+        driver.manage().window().maximize();
+        Thread.sleep(2000);
+    }
+
+    public void enterDataForLogin(String email, String password) throws InterruptedException{
+
+        getEmail(email);
+        Thread.sleep(1000);
+        getPassword(password);
+        Thread.sleep(1000);
+
+
+    }
+
+    public void getEmail(String email) throws InterruptedException{
+        driver.findElement(loginEmail).sendKeys(email);
+        Thread.sleep(2000);
+    }
+    public void getPassword(String password)throws InterruptedException
+    {
+        driver.findElement(loginPassword).sendKeys(password);
+        Thread.sleep(2000);
+    }
+
+    public Boolean submit_login_button() throws InterruptedException
+    {
+        driver.findElement(loginSubmitButton).click();
+        Thread.sleep(8000);
+        logoutButton= driver.findElement(homeclass).isDisplayed();
+        Thread.sleep(2000);
+        return logoutButton;
+
+
+    }
+
+    public String forget_password(String email) throws InterruptedException
+    {
+
+
+        setPassword();
+        setEmail(email);
+        res=clickResetPassword();
+        System.out.print(res);
+        clickCloseButton();
+        return  res;
+
+
+    }
+    public void setPassword() throws InterruptedException
+    {
+        driver.findElement(forgetPassword).click();
+        Thread.sleep(2000);
+    }
+
+    public void setEmail(String email) throws InterruptedException
+    {
+
+        driver.findElement(forgotEmail).sendKeys(email);
+        Thread.sleep(2000);
+    }
+    public String clickResetPassword()throws InterruptedException
+    {
+        driver.findElement(forgotLoader).click();
+        Thread.sleep(2000);
+        response=driver.findElement(successMessage).getText();
+        Thread.sleep(2000);
+        System.out.print(response);
+        return  response;
+
+    }
+    public void clickCloseButton()throws InterruptedException
+    {
+        driver.findElement(forgotCross).click();
+        Thread.sleep(2000);
+    }
+
+    public void logoutButton()throws  InterruptedException
+    {
+        driver.findElement(homeclass).click();
+        Thread.sleep(2000);
+    }
+    public boolean forgetPasswordForInvalidEmail(String email) throws InterruptedException
+    {
+
+        setPassword();
+        Thread.sleep(2000);
+        setEmail(email);
+        Thread.sleep(2000);
+        driver.findElement(forgotLoader).click();
+        Thread.sleep(3000);
+
+
+       invalidEmailForForgetPasswordText= driver.findElement(forgetInvalidEmailDetector).isDisplayed();
+        System.out.print(invalidEmailForForgetPasswordText);
+
+        clickCloseButton();
+        Thread.sleep(2000);
+
+        return invalidEmailForForgetPasswordText;
+    }
+    public void submit_Button() throws InterruptedException
+    {
+        driver.findElement(loginSubmitButton).click();
+        Thread.sleep(2000);
+    }
+    public String enterDataForInvalidEmailForLogin(String email,String password) throws InterruptedException
+    {
+        getEmail(email);
+        getPassword(password);
+        submit_Button();
+        actualForInvalidEmailForLogin=driver.findElement(invalidEmailforLogin).getText();
+        return actualForInvalidEmailForLogin;
+
+    }
+    public String enterDateForInvalidPasswordForLogin(String email,String password) throws InterruptedException
+    {
+        getEmail(email);
+        Thread.sleep(2000);
+        getPassword(password);
+        submit_Button();
+        Thread.sleep(2000);
+        actualForInvalidPasswordForLogin=driver.findElement(invalidEmailforLogin).getText();
+        return actualForInvalidPasswordForLogin;
+
+    }
+
+
+}

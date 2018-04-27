@@ -1,0 +1,98 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name = "Suite1">
+   <!-- <parameter name="firstName" value="iqra"/>
+    <parameter name="lastName" value="bibi"/>
+    <parameter name="email" value="iqrabibi25@yahoo.com"/>
+    <parameter name="phoneNumber" value="0345296468524"/>
+    <parameter name="description" value="this is my messgae"/>
+    <parameter name="invalidEmail" value="iqrayhoo.com"/>
+    <parameter name="invalidPhoneNumber" value="eeeeeeeeeeeeee"/>  -->
+
+
+    <test name = "business">
+        <classes>
+            <class name="Testcases.BusinessFlows">
+                <methods>
+
+                    <include name="businessPageHappyFlow" ></include>
+                    <include name="emailValidation"></include>
+                    <include name="phoneNumberValidation"></include>
+
+
+                </methods>
+            </class>
+            </classes>
+        </test>
+    <!--<test name = "login">-->
+        <!--<classes>-->
+            <!--<class name="Testcases.LoginFlows">-->
+                <!--<methods>-->
+
+                    <!--<include name="loginTestCasesHappyFlow"></include>-->
+                    <!--<include name="forgetPasswordTestCasesHappyFlow"></include>-->
+                    <!--<include name="forgetPasswordForInvalidEmail"></include>-->
+                    <!--<include name="logintestcasesForInvalidEmail"></include>-->
+                    <!--<include name="loginTestCasesForInvalidPassword"></include>-->
+
+
+
+                <!--</methods>-->
+            <!--</class>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+
+    <!--<test name = "removals">-->
+        <!--<classes>-->
+            <!--<class name="Testcases.RemovalsFlows">-->
+                <!--<methods>-->
+
+
+                   <!--<include name="removalstestCasesHappyFlow"></include>-->
+                    <!--<include name="removalForInvalidEmail"></include>-->
+                    <!--<include name="removalForInvalidPhoneNumber"></include>-->
+                    <!--<include name="removalClickHere"></include>-->
+
+
+                <!--</methods>-->
+            <!--</class>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="MyFinance">-->
+
+        <!--<classes>-->
+            <!--<class name="Testcases.MyFinanceFlows">-->
+                <!--<methods>-->
+                    <!--<include name="MyFinnaceHappyFlowForAddingAccount"></include>-->
+
+                    <!--<include name="deleteCreditCard"></include>-->
+                    <!--<include name="negativeCasesForCardNumber"></include>-->
+                    <!--<include name="negativeCasesForMonthYear"></include>-->
+                    <!--<include name="termOfUse"></include>-->
+                    <!--<include name="downloadInvoices"></include>-->
+
+
+
+                <!--</methods>-->
+            <!--</class>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+    <!--<test name = "MyInfo">-->
+        <!--<classes>-->
+            <!--<class name="Testcases.MyinfoFlows">-->
+                <!--<methods>-->
+
+                    <!--<include name="NegativeCaseForResetPassword" ></include>-->
+                    <!--<include name="updatefields" ></include>-->
+                    <!--<include name="reSetPassword"></include>-->
+
+
+
+                <!--</methods>-->
+            <!--</class>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+    </suite>
