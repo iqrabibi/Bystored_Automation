@@ -10,37 +10,37 @@
     <parameter name="invalidPhoneNumber" value="eeeeeeeeeeeeee"/>  -->
 
 
-    <test name = "business">
-        <classes>
-            <class name="Testcases.BusinessFlows">
-                <methods>
-
-                    <include name="businessPageHappyFlow" ></include>
-                    <include name="emailValidation"></include>
-                    <include name="phoneNumberValidation"></include>
-
-
-                </methods>
-            </class>
-            </classes>
-        </test>
-    <!--<test name = "login">-->
+    <!--<test name = "business">-->
         <!--<classes>-->
-            <!--<class name="Testcases.LoginFlows">-->
+            <!--<class name="Testcases.BusinessFlows">-->
                 <!--<methods>-->
 
-                    <!--<include name="loginTestCasesHappyFlow"></include>-->
-                    <!--<include name="forgetPasswordTestCasesHappyFlow"></include>-->
-                    <!--<include name="forgetPasswordForInvalidEmail"></include>-->
-                    <!--<include name="logintestcasesForInvalidEmail"></include>-->
-                    <!--<include name="loginTestCasesForInvalidPassword"></include>-->
-
+                    <!--<include name="businessPageHappyFlow" ></include>-->
+                    <!--<include name="emailValidation"></include>-->
+                    <!--<include name="phoneNumberValidation"></include>-->
 
 
                 <!--</methods>-->
             <!--</class>-->
-        <!--</classes>-->
-    <!--</test>-->
+            <!--</classes>-->
+        <!--</test>-->
+    <test name = "login">
+        <classes>
+            <class name="Testcases.LoginFlows">
+                <methods>
+
+                    <include name="loginTestCasesHappyFlow"></include>
+                    <include name="forgetPasswordTestCasesHappyFlow"></include>
+                    <include name="forgetPasswordForInvalidEmail"></include>
+                    <include name="logintestcasesForInvalidEmail"></include>
+                    <include name="loginTestCasesForInvalidPassword"></include>
+
+
+
+                </methods>
+            </class>
+        </classes>
+    </test>
 
 
     <!--<test name = "removals">-->
