@@ -40,11 +40,11 @@ public class BusinessPageObjects {
     {
         this.driver=driver;
     }
-    public void openBusinessPage() throws InterruptedException{
+    public void openBusinessPage(String url) throws InterruptedException{
 
 
 
-       driver.navigate().to("http://qa1.bystored.com/business");
+       driver.navigate().to(url+"business");
         driver.manage().window().maximize();
         Thread.sleep(2000);
 

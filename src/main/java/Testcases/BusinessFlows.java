@@ -17,6 +17,7 @@ import static General.Main.closeDriver;
 public class BusinessFlows extends Main{
 
     BusinessPageObjects bp;
+    String url=getUrl();
     public String firstName="iqra";
     public String lastName="bibi";
     public String email="iqrabibi25@yahoo.com";
@@ -38,7 +39,7 @@ public class BusinessFlows extends Main{
     {
 
         bp=new BusinessPageObjects(driver);
-        bp.openBusinessPage();
+        bp.openBusinessPage(url);
         Thread.sleep(2000);
         bp.goToForm();
         Thread.sleep(2000);

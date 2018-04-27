@@ -42,10 +42,10 @@ public class loginObjects {
         this.driver=driver;
     }
 
-    public void openLoginPage() throws InterruptedException{
+    public void openLoginPage(String url) throws InterruptedException{
 
 
-        driver.navigate().to("http://qa1.bystored.com/login");
+        driver.navigate().to(url+"login");
         driver.manage().window().maximize();
         Thread.sleep(2000);
     }

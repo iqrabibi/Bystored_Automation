@@ -17,6 +17,7 @@ public class LoginFlows extends Main{
 
   //  WebDriver driver=getDriver();
     loginObjects log;
+    String url=getUrl();
     public String  email="iqrabibi25@yahoo.com";
     public String invalidEmail="by@bystored.com";
 
@@ -42,7 +43,7 @@ public class LoginFlows extends Main{
     {
 
         log=new loginObjects(driver);
-        log.openLoginPage();
+        log.openLoginPage(url);
         Thread.sleep(2000);
         actualForForgetPassword =log.forget_password(email);
 
@@ -54,7 +55,7 @@ public class LoginFlows extends Main{
     public void forgetPasswordForInvalidEmail() throws InterruptedException
     {
         log=new loginObjects(driver);
-        log.openLoginPage();
+        log.openLoginPage(url);
         Thread.sleep(2000);
         actualForForgetPasswordForInvalidEmail=log.forgetPasswordForInvalidEmail(invalidEmail);
         Assert.assertTrue(actualForForgetPasswordForInvalidEmail);
@@ -69,7 +70,7 @@ public class LoginFlows extends Main{
     {
 
         log=new loginObjects(driver);
-        log.openLoginPage();
+        log.openLoginPage(url);
         Thread.sleep(2000);
         log.enterDataForLogin(email,password);
         Thread.sleep(2000);
@@ -86,7 +87,7 @@ public class LoginFlows extends Main{
     public void logintestcasesForInvalidEmail() throws InterruptedException
     {
         log=new loginObjects(driver);
-        log.openLoginPage();
+        log.openLoginPage(url);
         Thread.sleep(2000);
         actualForInvalidEmailForLogin=log.enterDataForInvalidEmailForLogin(invalidEmail,password);
 
@@ -101,7 +102,7 @@ public class LoginFlows extends Main{
     public void loginTestCasesForInvalidPassword() throws  InterruptedException
     {
         log=new loginObjects(driver);
-        log.openLoginPage();
+        log.openLoginPage(url);
         Thread.sleep(2000);
         actualForInvalidPasswordForLogin=log.enterDateForInvalidPasswordForLogin(email,invalidPassowrd);
         Assert.assertEquals(""+expectedForInvalidPasswordForLogin,""+actualForInvalidPasswordForLogin);

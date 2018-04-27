@@ -13,6 +13,7 @@ import org.testng.internal.PackageUtils;
 public class MyinfoFlows extends Main {
 
     MyInfoObjects in;
+    String url=getUrl();
 
     public String email="iqrabibi25@yahoo.com";
     public String pasword ="bystored";
@@ -34,7 +35,7 @@ public class MyinfoFlows extends Main {
     {
         in=new MyInfoObjects(driver);
         Thread.sleep(2000);
-        in.openMyAccountPage(email,pasword);
+        in.openMyAccountPage(email,pasword,url);
         Thread.sleep(2000);
         in.gotoMyInfoPage();
         Thread.sleep(2000);

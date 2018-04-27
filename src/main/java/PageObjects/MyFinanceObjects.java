@@ -49,9 +49,9 @@ public class MyFinanceObjects {
       this.driver=driver;
   }
 
-  public void openMyaccountPage(String email,String password) throws InterruptedException {
+  public void openMyaccountPage(String email,String password,String url) throws InterruptedException {
       lo=new loginObjects(driver);
-      lo.openLoginPage();
+      lo.openLoginPage(url);
       Thread.sleep(2000);
       lo.enterDataForLogin(email,password);
       Thread.sleep(2000);

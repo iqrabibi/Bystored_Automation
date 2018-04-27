@@ -10,6 +10,12 @@ import org.testng.annotations.*;
 public class Main {
 
    public  static WebDriver driver;
+    public String url;
+    public String getUrl()
+    {
+        url="http://qa1.bystored.com/";
+        return url;
+    }
 
   @BeforeTest
   public  static  WebDriver getDriver()

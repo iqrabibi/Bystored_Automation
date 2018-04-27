@@ -34,10 +34,10 @@ public class MyInfoObjects {
         this.driver=driver;
     }
 
-    public void openMyAccountPage(String email,String password) throws InterruptedException
+    public void openMyAccountPage(String email,String password,String url) throws InterruptedException
     {
         lo=new loginObjects(driver);
-        lo.openLoginPage();
+        lo.openLoginPage(url);
         Thread.sleep(3000);
         lo.enterDataForLogin(email,password);
         Thread.sleep(2000);

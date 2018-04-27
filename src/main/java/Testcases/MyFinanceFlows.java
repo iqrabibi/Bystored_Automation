@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
  */
 public class MyFinanceFlows extends Main {
     MyFinanceObjects mfo;
+    String url=getUrl();
     public String email = "iqrabibi25@yahoo.com";
     public String password = "bystored";
     public String name = "iqra";
@@ -43,7 +44,7 @@ public class MyFinanceFlows extends Main {
 
         mfo = new MyFinanceObjects(driver);
         Thread.sleep(2000);
-        mfo.openMyaccountPage(email, password);
+        mfo.openMyaccountPage(email, password,url);
         Thread.sleep(2000);
         mfo.gOToMyFinance();
         Thread.sleep(2000);
@@ -91,7 +92,7 @@ public class MyFinanceFlows extends Main {
         actualForInvalidCardNumber=mfo.getResponseForInvalidCardNumber();
         Thread.sleep(2000);
         Assert.assertEquals(""+expectedForInvalidCardNumber,""+actualForInvalidCardNumber);
-        System.out.print("\n Actual For login test cases For Invalid Email\n"+actualForInvalidCardNumber+"\n Expected For login test cases For Invalid Email\n"+expectedForInvalidCardNumber);
+        System.out.print("\n Actual For negative cases for card number\n"+actualForInvalidCardNumber+"\n Expected Fornegative cases for card number\n"+expectedForInvalidCardNumber);
         Thread.sleep(5000);
         mfo.pageRefreshes();
 
@@ -109,7 +110,7 @@ public class MyFinanceFlows extends Main {
         Thread.sleep(2000);
         actualForInvalidMonthYear=mfo.getResponseForInvalidMonthYear();
         Assert.assertEquals(""+expectedForInvalidMonthYear,""+actualForInvalidMonthYear);
-        System.out.print("\n Actual For login test cases For Invalid Email\n"+actualForInvalidMonthYear+"\n Expected For login test cases For Invalid Email\n"+expectedForInvalidCardNumber);
+        System.out.print("\n Actual For negative cases for Month year for credit card\n"+actualForInvalidMonthYear+"\nFor negative cases for Month year for credit card\n"+expectedForInvalidCardNumber);
         Thread.sleep(5000);
 
 
@@ -124,7 +125,7 @@ public class MyFinanceFlows extends Main {
         Thread.sleep(2000);
         actualForTermOfUse=mfo.getTermOfUsePage();
         Assert.assertEquals(""+expectedForTermOfUse,""+actualForTermOfUse);
-        System.out.print("\n Actual For login test cases For Invalid Email\n"+actualForTermOfUse+"\n Expected For login test cases For Invalid Email\n"+expectedForTermOfUse);
+        System.out.print("\n Actual For term of use\n"+actualForTermOfUse+"\n Expected For term of use\n"+expectedForTermOfUse);
         Thread.sleep(5000);
         mfo.pageRefreshes();
 
