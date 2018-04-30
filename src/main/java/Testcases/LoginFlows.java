@@ -44,7 +44,7 @@ public class LoginFlows extends Main{
     public void forgetPasswordTestCasesHappyFlow() throws InterruptedException
     {
 
-        log=new loginObjects(driver);
+        log=new loginObjects(driver,wait);
         log.openLoginPage(url);
         Thread.sleep(2000);
         actualForForgetPassword =log.forget_password(email);
@@ -56,7 +56,7 @@ public class LoginFlows extends Main{
     @Test
     public void forgetPasswordForInvalidEmail() throws InterruptedException
     {
-        log=new loginObjects(driver);
+        log=new loginObjects(driver,wait);
         log.openLoginPage(url);
         Thread.sleep(2000);
         actualForForgetPasswordForInvalidEmail=log.forgetPasswordForInvalidEmail(invalidEmail);
@@ -71,16 +71,16 @@ public class LoginFlows extends Main{
     public void loginTestCasesHappyFlow()throws InterruptedException
     {
 
-        log=new loginObjects(driver);
+        log=new loginObjects(driver,wait);
         log.openLoginPage(url);
-       Thread.sleep(2000);
+       //Thread.sleep(2000);
 
         log.enterDataForLogin(email,password);
-      Thread.sleep(2000);
+      //Thread.sleep(2000);
         actualForLogin = log.submit_login_button();
-       Thread.sleep(2000);
+      // Thread.sleep(2000);
         log.logoutButton();
-       Thread.sleep(2000);
+      // Thread.sleep(2000);
         Assert.assertTrue(actualForLogin);
         System.out.print("\n"+actualForLogin);
 
@@ -91,7 +91,7 @@ public class LoginFlows extends Main{
     @Test
     public void logintestcasesForInvalidEmail() throws InterruptedException
     {
-        log=new loginObjects(driver);
+        log=new loginObjects(driver,wait);
         log.openLoginPage(url);
         Thread.sleep(2000);
         actualForInvalidEmailForLogin=log.enterDataForInvalidEmailForLogin(invalidEmail,password);
@@ -106,7 +106,7 @@ public class LoginFlows extends Main{
     @Test
     public void loginTestCasesForInvalidPassword() throws  InterruptedException
     {
-        log=new loginObjects(driver);
+        log=new loginObjects(driver,wait);
         log.openLoginPage(url);
 
         Thread.sleep(2000);

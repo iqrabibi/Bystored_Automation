@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ThreadGuard;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -13,6 +14,7 @@ import java.io.File;
  */
 public class MyFinanceObjects {
     WebDriver driver;
+    WebDriverWait wait;
     loginObjects lo;
     public static By financelink=By.cssSelector("body > section > div > div > div > div > div.col-lg-3.col-md-3.col-sm-3.col-xs-3.hidden-xs.bhoechie-tab-menu > div > a:nth-child(8) > span");
 
@@ -50,7 +52,7 @@ public class MyFinanceObjects {
   }
 
   public void openMyaccountPage(String email,String password,String url) throws InterruptedException {
-      lo=new loginObjects(driver);
+      lo=new loginObjects(driver,wait);
       lo.openLoginPage(url);
       Thread.sleep(2000);
       lo.enterDataForLogin(email,password);

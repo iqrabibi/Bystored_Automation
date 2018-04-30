@@ -11,7 +11,7 @@ import org.testng.annotations.*;
 public class Main {
 
    public  static WebDriver driver;
-  // public static WebDriverWait wait;
+  public static WebDriverWait wait;
     public String url;
     public String getUrl()
     {
@@ -24,7 +24,7 @@ public class Main {
   {
       System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
       driver = new ChromeDriver();
-//       wait= new WebDriverWait(driver,15);
+     wait= new WebDriverWait(driver,15);
 
       //driver.navigate().to("http://qa1.bystored.com/");
       //
