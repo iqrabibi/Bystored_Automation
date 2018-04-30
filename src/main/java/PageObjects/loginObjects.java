@@ -2,6 +2,9 @@ package PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 /**
@@ -34,12 +37,17 @@ public class loginObjects {
 
 
     WebDriver driver;
+   // WebDriverWait wait;
+
 
     public loginObjects(WebDriver driver)
 
 
     {
         this.driver=driver;
+
+
+
     }
 
     public void openLoginPage(String url) throws InterruptedException{
@@ -47,27 +55,31 @@ public class loginObjects {
 
         driver.navigate().to(url+"login");
         driver.manage().window().maximize();
-        Thread.sleep(2000);
+
+       Thread.sleep(2000);
     }
 
     public void enterDataForLogin(String email, String password) throws InterruptedException{
 
+
+
+
         getEmail(email);
-        Thread.sleep(1000);
+       Thread.sleep(1000);
         getPassword(password);
-        Thread.sleep(1000);
+       Thread.sleep(1000);
 
 
     }
 
     public void getEmail(String email) throws InterruptedException{
         driver.findElement(loginEmail).sendKeys(email);
-        Thread.sleep(2000);
+       Thread.sleep(2000);
     }
     public void getPassword(String password)throws InterruptedException
     {
         driver.findElement(loginPassword).sendKeys(password);
-        Thread.sleep(2000);
+       Thread.sleep(2000);
     }
 
     public Boolean submit_login_button() throws InterruptedException
@@ -75,7 +87,7 @@ public class loginObjects {
         driver.findElement(loginSubmitButton).click();
         Thread.sleep(8000);
         logoutButton= driver.findElement(homeclass).isDisplayed();
-        Thread.sleep(2000);
+       Thread.sleep(2000);
         return logoutButton;
 
 

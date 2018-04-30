@@ -2,6 +2,7 @@ package General;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 
 /**
@@ -10,6 +11,7 @@ import org.testng.annotations.*;
 public class Main {
 
    public  static WebDriver driver;
+  // public static WebDriverWait wait;
     public String url;
     public String getUrl()
     {
@@ -22,6 +24,8 @@ public class Main {
   {
       System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
       driver = new ChromeDriver();
+//       wait= new WebDriverWait(driver,15);
+
       //driver.navigate().to("http://qa1.bystored.com/");
       //
       return driver;

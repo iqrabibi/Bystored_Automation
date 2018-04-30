@@ -9,6 +9,8 @@ import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by VenD on 4/16/2018.
  */
@@ -71,18 +73,21 @@ public class LoginFlows extends Main{
 
         log=new loginObjects(driver);
         log.openLoginPage(url);
-        Thread.sleep(2000);
+       Thread.sleep(2000);
+
         log.enterDataForLogin(email,password);
-        Thread.sleep(2000);
+      Thread.sleep(2000);
         actualForLogin = log.submit_login_button();
-        Thread.sleep(2000);
+       Thread.sleep(2000);
         log.logoutButton();
-        Thread.sleep(2000);
+       Thread.sleep(2000);
         Assert.assertTrue(actualForLogin);
         System.out.print("\n"+actualForLogin);
 
 
     }
+
+
     @Test
     public void logintestcasesForInvalidEmail() throws InterruptedException
     {
@@ -103,14 +108,15 @@ public class LoginFlows extends Main{
     {
         log=new loginObjects(driver);
         log.openLoginPage(url);
+
         Thread.sleep(2000);
+
         actualForInvalidPasswordForLogin=log.enterDateForInvalidPasswordForLogin(email,invalidPassowrd);
         Assert.assertEquals(""+expectedForInvalidPasswordForLogin,""+actualForInvalidPasswordForLogin);
         System.out.print("\n Actual For login Test Cases For Invalid Password\n"+expectedForInvalidPasswordForLogin+"\n Expected For login Test Cases For Invalid Password\n"+expectedForInvalidPasswordForLogin);
 
 
     }
-
 
 
 

@@ -30,10 +30,10 @@
                 <methods>
 
                     <include name="loginTestCasesHappyFlow"></include>
-                    <include name="forgetPasswordTestCasesHappyFlow"></include>
-                    <include name="forgetPasswordForInvalidEmail"></include>
-                    <include name="logintestcasesForInvalidEmail"></include>
-                    <include name="loginTestCasesForInvalidPassword"></include>
+                    <!--<include name="forgetPasswordTestCasesHappyFlow"></include>-->
+                    <!--<include name="forgetPasswordForInvalidEmail"></include>-->
+                    <!--<include name="logintestcasesForInvalidEmail"></include>-->
+                    <!--<include name="loginTestCasesForInvalidPassword"></include>-->
 
 
 
