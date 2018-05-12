@@ -1,23 +1,21 @@
-package Testcases;
+package TestCases;
 
 import General.Main;
-import PageObjects.BusinessPageObjects;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
+//import static General.InitMethods.Url;
 
-import static General.Main.getDriver;
-import static General.Main.closeDriver;
+
+import static General.InitMethods.Business_Object;
+import static General.InitMethods.Url;
 
 /**
  * Created by VenD on 4/16/2018.
  */
 public class BusinessFlows extends Main{
 
-    BusinessPageObjects bp;
-    String url=getUrl();
+   // BusinessPageObjects bp;
+   // String url=getUrl();
     public String firstName="iqra";
     public String lastName="bibi";
     public String email="iqrabibi25@yahoo.com";
@@ -38,20 +36,21 @@ public class BusinessFlows extends Main{
     public  void businessPageHappyFlow() throws InterruptedException
     {
 
-        bp=new BusinessPageObjects(driver);
-        bp.openBusinessPage(url);
-        Thread.sleep(2000);
-        bp.goToForm();
-        Thread.sleep(2000);
-        bp.enterBusinessDetailForHappyFlow(firstName,lastName,email,phoneNumber,description);
-        Thread.sleep(2000);
-        actualForBusiness=bp.submitButton();
+//        bp=new BusinessPageObjects(driver);
+//        System.out.print(Url);
+        Business_Object.openBusinessPage(Url);
+       // Thread.sleep(2000);
+        Business_Object.goToForm();
+       // Thread.sleep(2000);
+        Business_Object.enterBusinessDetailForHappyFlow(firstName,lastName,email,phoneNumber,description);
+        //Thread.sleep(2000);
+        actualForBusiness=Business_Object.submitButton();
 
 
         Thread.sleep(3000);
         Assert.assertEquals(expectedForBusiness,actualForBusiness);
         System.out.print("\n Expected for business happy flow :\n"+expectedForBusiness+"\n Actual for business happy flow:\n"+actualForBusiness);
-        bp.pageRefreshes();
+        Business_Object.pageRefreshes();
         Thread.sleep(2000);
 
 
@@ -63,19 +62,19 @@ public class BusinessFlows extends Main{
    @Test
     public void emailValidation() throws InterruptedException
     {
+//
+//        bp=new BusinessPageObjects(driver);
 
-        bp=new BusinessPageObjects(driver);
-
-        bp.goToForm();
+        Business_Object.goToForm();
         Thread.sleep(2000);
-        bp.enterBusinessDetailsForInvalidEmail(firstName,lastName,invalidEmail,phoneNumber);
+        Business_Object.enterBusinessDetailsForInvalidEmail(firstName,lastName,invalidEmail,phoneNumber);
         Thread.sleep(2000);
-        actualForInvalidEmail=bp.invalidEmailText();
+        actualForInvalidEmail=Business_Object.invalidEmailText();
         Thread.sleep(2000);
         Assert.assertEquals(expectedForInvalidEmail,actualForInvalidEmail);
         System.out.print("\n Expected for email validation  for business \n"+expectedForInvalidEmail+"\n Actual for email validation for business \n "+actualForInvalidEmail);
 
-        bp.pageRefreshes();
+        Business_Object.pageRefreshes();
         Thread.sleep(2000);
 
     }
@@ -85,14 +84,14 @@ public class BusinessFlows extends Main{
 
     public void phoneNumberValidation() throws  InterruptedException
     {
-        bp=new BusinessPageObjects(driver);
+//        bp=new BusinessPageObjects(driver);
         Thread.sleep(2000);
-        bp.goToForm();
+        Business_Object.goToForm();
         Thread.sleep(2000);
 
-        bp.enterBusinessDetailForHappyFlow(firstName,lastName,email,invalidPhoneNumber,description);
+        Business_Object.enterBusinessDetailForHappyFlow(firstName,lastName,email,invalidPhoneNumber,description);
         Thread.sleep(2000);
-        actualForInvalidPhoneNumber=bp.invalidPhoneNumberText();
+        actualForInvalidPhoneNumber=Business_Object.invalidPhoneNumberText();
         Thread.sleep(2000);
         Assert.assertEquals(expectedForInvalidPhoneNumber,actualForInvalidPhoneNumber);
         System.out.print("\n Expected for phonenumber validation for business\n"+expectedForInvalidPhoneNumber+"\n Actual for phonenumber validation for business\n "+actualForInvalidPhoneNumber);

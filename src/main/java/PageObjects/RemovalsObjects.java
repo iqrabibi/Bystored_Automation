@@ -72,7 +72,7 @@ public class RemovalsObjects {
     {
 
         driver.findElement(removalSubmitButton).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         response=driver.findElement(remoavlmsg).getText();
         return response;
 

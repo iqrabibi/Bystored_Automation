@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 /**
  * Created by VenD on 4/16/2018.
  */
-public class loginObjects {
+public class LoginObjects {
 
     public static By loginButton=By.linkText("LOGIN");
     public static By loginEmail= By.name("email");
@@ -32,6 +32,9 @@ public class loginObjects {
     public String forgetText="Forgot password?";
     public static By forgetTextId=By.cssSelector("#forgotModal > div > div > div.modal-body.fp > div > div.col-xs-12.col-sm-12.col-md-12 > h4");
 
+    //public static By forgetTextId2=By.id("forgotModal").findElement(By.tagName("h4"));
+
+
     public String response;
     public String res;
     public boolean logoutButton;
@@ -40,15 +43,16 @@ public class loginObjects {
 
 
     WebDriver driver;
-    WebDriverWait wait;
+  //  WebDriverWait wait;
 
 
-    public loginObjects(WebDriver driver,WebDriverWait wait)
+    public LoginObjects(WebDriver driver)
 
 
     {
+
         this.driver=driver;
-        this.wait=wait;
+       // this.wait=wait;
 
 
 
@@ -60,40 +64,40 @@ public class loginObjects {
         driver.navigate().to(url+"login");
         driver.manage().window().maximize();
 
-     // Thread.sleep(2000);
+      Thread.sleep(2000);
     }
 
     public void enterDataForLogin(String email, String password) throws InterruptedException{
 
 
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(loginSubmitButton));
+      // wait.until(ExpectedConditions.presenceOfElementLocated(loginSubmitButton));
 
         getEmail(email);
-      // Thread.sleep(1000);
+       Thread.sleep(1000);
         getPassword(password);
-      // Thread.sleep(1000);
+       Thread.sleep(1000);
 
 
     }
 
     public void getEmail(String email) throws InterruptedException{
         driver.findElement(loginEmail).sendKeys(email);
-      // Thread.sleep(2000);
+      Thread.sleep(2000);
     }
     public void getPassword(String password)throws InterruptedException
     {
         driver.findElement(loginPassword).sendKeys(password);
-     //  Thread.sleep(2000);
+      Thread.sleep(2000);
     }
 
     public Boolean submit_login_button() throws InterruptedException
     {
         driver.findElement(loginSubmitButton).click();
-       // Thread.sleep(8000);
-        wait.until(ExpectedConditions.presenceOfElementLocated(homeclass));
+        Thread.sleep(8000);
+       //wait.until(ExpectedConditions.presenceOfElementLocated(homeclass));
         logoutButton= driver.findElement(homeclass).isDisplayed();
-      // Thread.sleep(2000);
+      Thread.sleep(2000);
         return logoutButton;
 
 
@@ -154,7 +158,7 @@ public class loginObjects {
     public void logoutButton()throws  InterruptedException
     {
         driver.findElement(homeclass).click();
-       // Thread.sleep(2000);
+        Thread.sleep(2000);
     }
     public boolean forgetPasswordForInvalidEmail(String email) throws InterruptedException
     {

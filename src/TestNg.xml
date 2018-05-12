@@ -10,42 +10,42 @@
     <parameter name="invalidPhoneNumber" value="eeeeeeeeeeeeee"/>  -->
 
 
-    <!--<test name = "business">-->
-        <!--<classes>-->
-            <!--<class name="Testcases.BusinessFlows">-->
-                <!--<methods>-->
+    <test name = "business">
+        <classes>
+            <class name="TestCases.BusinessFlows">
+                <methods>
 
-                    <!--<include name="businessPageHappyFlow" ></include>-->
+                    <include name="businessPageHappyFlow" ></include>
                     <!--<include name="emailValidation"></include>-->
                     <!--<include name="phoneNumberValidation"></include>-->
 
 
-                <!--</methods>-->
-            <!--</class>-->
-            <!--</classes>-->
-        <!--</test>-->
-    <test name = "login">
-        <classes>
-            <class name="Testcases.LoginFlows">
-                <methods>
+                </methods>
+            </class>
+            </classes>
+        </test>
+    <!--<test name = "login">-->
+        <!--<classes>-->
+            <!--<class name="TestCases.LoginFlows">-->
+                <!--<methods>-->
 
-                    <include name="loginTestCasesHappyFlow"></include>
-                    <include name="forgetPasswordTestCasesHappyFlow"></include>
+                    <!--<include name="loginTestCasesHappyFlow"></include>-->
+                    <!--<include name="forgetPasswordTestCasesHappyFlow"></include>-->
                     <!--<include name="forgetPasswordForInvalidEmail"></include>-->
                     <!--<include name="logintestcasesForInvalidEmail"></include>-->
                     <!--<include name="loginTestCasesForInvalidPassword"></include>-->
 
 
 
-                </methods>
-            </class>
-        </classes>
-    </test>
+                <!--</methods>-->
+            <!--</class>-->
+        <!--</classes>-->
+    <!--</test>-->
 
 
     <!--<test name = "removals">-->
         <!--<classes>-->
-            <!--<class name="Testcases.RemovalsFlows">-->
+            <!--<class name="TestCases.RemovalsFlows">-->
                 <!--<methods>-->
 
 
@@ -62,7 +62,7 @@
     <!--<test name="MyFinance">-->
 
         <!--<classes>-->
-            <!--<class name="Testcases.MyFinanceFlows">-->
+            <!--<class name="TestCases.MyFinanceFlows">-->
                 <!--<methods>-->
                     <!--<include name="MyFinnaceHappyFlowForAddingAccount"></include>-->
 
@@ -81,7 +81,7 @@
 
     <!--<test name = "MyInfo">-->
         <!--<classes>-->
-            <!--<class name="Testcases.MyinfoFlows">-->
+            <!--<class name="TestCases.MyinfoFlows">-->
                 <!--<methods>-->
 
                     <!--<include name="NegativeCaseForResetPassword" ></include>-->

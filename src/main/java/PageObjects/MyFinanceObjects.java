@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ThreadGuard;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+import static General.InitMethods.Login_Object;
+
 
 import java.io.File;
 
@@ -14,8 +16,8 @@ import java.io.File;
  */
 public class MyFinanceObjects {
     WebDriver driver;
-    WebDriverWait wait;
-    loginObjects lo;
+   // WebDriverWait wait;
+   // LoginObjects lo;
     public static By financelink=By.cssSelector("body > section > div > div > div > div > div.col-lg-3.col-md-3.col-sm-3.col-xs-3.hidden-xs.bhoechie-tab-menu > div > a:nth-child(8) > span");
 
     public static By addFinanceButton=By.id("addNewCard");
@@ -52,12 +54,12 @@ public class MyFinanceObjects {
   }
 
   public void openMyaccountPage(String email,String password,String url) throws InterruptedException {
-      lo=new loginObjects(driver,wait);
-      lo.openLoginPage(url);
+      //lo=new LoginObjects(driver);
+      Login_Object.openLoginPage(url);
       Thread.sleep(2000);
-      lo.enterDataForLogin(email,password);
+      Login_Object.enterDataForLogin(email,password);
       Thread.sleep(2000);
-      lo.submit_Button();
+      Login_Object.submit_Button();
   }
 
 public void gOToMyFinance() throws InterruptedException
@@ -81,7 +83,7 @@ public void addCardOpen() throws InterruptedException
 public void enterDataForNewCard(String name,String number, String month,String year,String cvv) throws InterruptedException
     {
 
-        getcardHolderName(name);
+        getCardHolderName(name);
         getCardNumber(number);
         getCardExpiryMonth(month);
         getCardExpiryYear(year);
@@ -89,7 +91,7 @@ public void enterDataForNewCard(String name,String number, String month,String y
 
     }
 
-    public void getcardHolderName(String name) throws  InterruptedException
+    public void getCardHolderName(String name) throws  InterruptedException
     {
         Thread.sleep(2000);
         driver.findElement(CardHolderName).sendKeys(name);
@@ -154,7 +156,7 @@ public void enterDataForNewCard(String name,String number, String month,String y
 
     public void enterDataForInvalidCardNumber(String name,String number,String month)throws InterruptedException
     {
-        getcardHolderName(name);
+        getCardHolderName(name);
         getCardNumber(number);
         getCardExpiryMonth(month);
     }
@@ -268,7 +270,10 @@ public void enterDataForNewCard(String name,String number, String month,String y
         for (int i = 0; i < dir_contents.length; i++) {
             if (dir_contents[i].getName().equals(fileName))
                 return flag=true;
+
         }
+       // dir_contents.
+       // dir.exists();
 
         return flag;
     }

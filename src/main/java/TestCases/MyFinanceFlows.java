@@ -1,22 +1,26 @@
-package Testcases;
+package TestCases;
 
 import General.Main;
-import PageObjects.MyFinanceObjects;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import static General.InitMethods.My_Finanace_Object;
+import static General.InitMethods.Url;
+import static General.InitMethods.downloadPath;
+
 
 
 /**
  * Created by VenD on 4/22/2018.
  */
 public class MyFinanceFlows extends Main {
-    MyFinanceObjects mfo;
-    String url=getUrl();
+    //MyFinanceObjects mfo;
+    //String url=getUrl();
     public String email = "iqrabibi25@yahoo.com";
     public String password = "bystored";
     public String name = "iqra";
-    public String number = "4242424242424242";
+    public String number = "4111111111111111";
     public String month = "10";
     public String year = "2019";
     public String cvvCode = "123";
@@ -31,7 +35,9 @@ public class MyFinanceFlows extends Main {
     public String expectedForInvalidMonthYear="Credit expiry date is invalid.";
     public int expectedForTermOfUse=4;
     public int actualForTermOfUse;
-    public  String downloadPath = "C:\\Users\\VenD\\Downloads";
+    public String invoicesId;
+    public String invRefrence;
+ //  public  String downloadingPath = "C:\\Users\\VenD\\Downloads";
 
     public boolean responseForDownloadInvoices;
 
@@ -42,26 +48,26 @@ public class MyFinanceFlows extends Main {
 
     public void MyFinnaceHappyFlowForAddingAccount() throws InterruptedException {
 
-        mfo = new MyFinanceObjects(driver);
+      //  mfo = new MyFinanceObjects(driver);
         Thread.sleep(2000);
-        mfo.openMyaccountPage(email, password,url);
+      My_Finanace_Object.openMyaccountPage(email, password,Url);
         Thread.sleep(2000);
-        mfo.gOToMyFinance();
+        My_Finanace_Object.gOToMyFinance();
         Thread.sleep(2000);
-        mfo.addCardOpen();
+        My_Finanace_Object.addCardOpen();
         Thread.sleep(2000);
-        mfo.enterDataForNewCard(name, number, month, year, cvvCode);
+        My_Finanace_Object.enterDataForNewCard(name, number, month, year, cvvCode);
         Thread.sleep(2000);
-        mfo.clickAggrement();
+        My_Finanace_Object.clickAggrement();
         Thread.sleep(2000);
-        mfo.clickSubmitButton();
+        My_Finanace_Object.clickSubmitButton();
         Thread.sleep(3000);
 
-        actualForAddingCard = mfo.getResonseForAddingCard();
+        actualForAddingCard = My_Finanace_Object.getResonseForAddingCard();
         Assert.assertTrue(actualForAddingCard);
         System.out.print(actualForAddingCard);
         Thread.sleep(5000);
-        mfo.pageRefreshes();
+        My_Finanace_Object.pageRefreshes();
 
 
     }
@@ -69,13 +75,13 @@ public class MyFinanceFlows extends Main {
 
     public void deleteCreditCard() throws InterruptedException {
 
-        mfo = new MyFinanceObjects(driver);
+       // My_Finanace_Object = new MyFinanceObjects(driver);
         Thread.sleep(2000);
-        actualForDeleteCard = mfo.finddeleteButton();
+        actualForDeleteCard = My_Finanace_Object.finddeleteButton();
         Assert.assertTrue(actualForDeleteCard);
         System.out.print(actualForDeleteCard);
         Thread.sleep(5000);
-        mfo.pageRefreshes();
+        My_Finanace_Object.pageRefreshes();
 
 
     }
@@ -83,18 +89,18 @@ public class MyFinanceFlows extends Main {
 
     public void negativeCasesForCardNumber() throws InterruptedException
     {
-        mfo = new MyFinanceObjects(driver);
+      //  mfo = new MyFinanceObjects(driver);
         Thread.sleep(2000);
-        mfo.addCardOpen();
+        My_Finanace_Object.addCardOpen();
         Thread.sleep(2000);
-        mfo.enterDataForInvalidCardNumber(name,invalidNumber,month);
+        My_Finanace_Object.enterDataForInvalidCardNumber(name,invalidNumber,month);
         Thread.sleep(2000);
-        actualForInvalidCardNumber=mfo.getResponseForInvalidCardNumber();
+        actualForInvalidCardNumber=My_Finanace_Object.getResponseForInvalidCardNumber();
         Thread.sleep(2000);
         Assert.assertEquals(""+expectedForInvalidCardNumber,""+actualForInvalidCardNumber);
         System.out.print("\n Actual For negative cases for card number\n"+actualForInvalidCardNumber+"\n Expected Fornegative cases for card number\n"+expectedForInvalidCardNumber);
         Thread.sleep(5000);
-        mfo.pageRefreshes();
+        My_Finanace_Object.pageRefreshes();
 
 
 
@@ -102,13 +108,13 @@ public class MyFinanceFlows extends Main {
     @Test
     public void negativeCasesForMonthYear() throws InterruptedException
     {
-        mfo = new MyFinanceObjects(driver);
+        //My_Finanace_Object= new MyFinanceObjects(driver);
         Thread.sleep(2000);
-        mfo.addCardOpen();
+        My_Finanace_Object.addCardOpen();
         Thread.sleep(2000);
-        mfo.enterDataForNewCard(name,number,invalidMonth,invalidYear,cvvCode);
+        My_Finanace_Object.enterDataForNewCard(name,number,invalidMonth,invalidYear,cvvCode);
         Thread.sleep(2000);
-        actualForInvalidMonthYear=mfo.getResponseForInvalidMonthYear();
+        actualForInvalidMonthYear=My_Finanace_Object.getResponseForInvalidMonthYear();
         Assert.assertEquals(""+expectedForInvalidMonthYear,""+actualForInvalidMonthYear);
         System.out.print("\n Actual For negative cases for Month year for credit card\n"+actualForInvalidMonthYear+"\nFor negative cases for Month year for credit card\n"+expectedForInvalidCardNumber);
         Thread.sleep(5000);
@@ -121,13 +127,13 @@ public class MyFinanceFlows extends Main {
 
     public void termOfUse() throws InterruptedException
     {
-        mfo = new MyFinanceObjects(driver);
+        //mfo = new MyFinanceObjects(driver);
         Thread.sleep(2000);
-        actualForTermOfUse=mfo.getTermOfUsePage();
+        actualForTermOfUse=My_Finanace_Object.getTermOfUsePage();
         Assert.assertEquals(""+expectedForTermOfUse,""+actualForTermOfUse);
         System.out.print("\n Actual For term of use\n"+actualForTermOfUse+"\n Expected For term of use\n"+expectedForTermOfUse);
         Thread.sleep(5000);
-        mfo.pageRefreshes();
+        My_Finanace_Object.pageRefreshes();
 
 
     }
@@ -136,11 +142,30 @@ public class MyFinanceFlows extends Main {
     {
 
 
-        mfo = new MyFinanceObjects(driver);
         Thread.sleep(2000);
-        mfo.downloadClick();
+        My_Finanace_Object.openMyaccountPage(email, password,Url);
         Thread.sleep(2000);
-        Assert.assertTrue(mfo.isFileDownloaded(downloadPath, "invoice-7647.pdf"), "Failed to download Expected document");
+        My_Finanace_Object.gOToMyFinance();
+      //  Thread.sleep(2000);
+       // My_Finanace_Object = new MyFinanceObjects(driver);
+        Thread.sleep(2000);
+        My_Finanace_Object.downloadClick();
+        Thread.sleep(2000);
+      //  invoicesId=driver.findElement(By.linkText("View invoice")).getText();
+        WebElement element3 = driver.findElement(By.linkText("View invoice"));
+        System.out.println(element3.getAttribute("href"));
+
+       invRefrence= element3.getAttribute("href");
+        String lastDigitOfRefrence=invRefrence.substring((invRefrence.length()-4));
+        System.out.print(lastDigitOfRefrence);
+        invoicesId="invoice-"+lastDigitOfRefrence+".pdf";
+
+        System.out.print(downloadPath);
+        System.out.print(invoicesId);
+
+        Assert.assertTrue(My_Finanace_Object.isFileDownloaded(downloadPath,invoicesId), "Failed to download Expected document");
+
+
 
 
     }

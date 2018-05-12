@@ -4,14 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import static General.InitMethods.Login_Object;
 
 /**
  * Created by VenD on 4/25/2018.
  */
 public class MyInfoObjects {
     WebDriver driver;
-    WebDriverWait wait;
-    loginObjects lo;
+   // WebDriverWait wait;
+   // LoginObjects lo;
     public static By infoLink= By.cssSelector("body > section > div > div > div > div > div.col-lg-3.col-md-3.col-sm-3.col-xs-3.hidden-xs.bhoechie-tab-menu > div > a:nth-child(7) > span");
       public static By resetLink=By.id("changePasswordSection");
     public static By newPasswordField=By.id("password");
@@ -38,12 +39,12 @@ public class MyInfoObjects {
 
     public void openMyAccountPage(String email,String password,String url) throws InterruptedException
     {
-        lo=new loginObjects(driver,wait);
-        lo.openLoginPage(url);
+       // lo=new LoginObjects(driver);
+        Login_Object.openLoginPage(url);
         Thread.sleep(3000);
-        lo.enterDataForLogin(email,password);
+        Login_Object.enterDataForLogin(email,password);
         Thread.sleep(2000);
-        lo.submit_Button();
+        Login_Object.submit_Button();
     }
 
     public void gotoMyInfoPage() throws InterruptedException

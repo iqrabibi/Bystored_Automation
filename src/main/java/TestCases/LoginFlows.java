@@ -1,15 +1,13 @@
-package Testcases;
+package TestCases;
 
 import General.Main;
-import PageObjects.loginObjects;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import PageObjects.LoginObjects;
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
+
+import static General.InitMethods.Login_Object;
+import static General.InitMethods.Url;
 
 /**
  * Created by VenD on 4/16/2018.
@@ -18,8 +16,8 @@ public class LoginFlows extends Main{
 
 
   //  WebDriver driver=getDriver();
-    loginObjects log;
-    String url=getUrl();
+   // LoginObjects log;
+    //String url=getUrl();
     public String  email="iqrabibi25@yahoo.com";
     public String invalidEmail="by@bystored.com";
 
@@ -44,22 +42,22 @@ public class LoginFlows extends Main{
     public void forgetPasswordTestCasesHappyFlow() throws InterruptedException
     {
 
-        log=new loginObjects(driver,wait);
-        log.openLoginPage(url);
+      //  Login_Object=new LoginObjects(driver);
+      Login_Object.openLoginPage(Url);
         Thread.sleep(2000);
-        actualForForgetPassword =log.forget_password(email);
+        actualForForgetPassword =Login_Object.forget_password(email);
 
-        Assert.assertEquals(""+expectedForForgetPassword,""+actualForForgetPassword);
+        Assert.assertEquals(""+expectedForForgetPassword,""+actualForForgetPassword,"");
         System.out.print("\n Actual For forget password\n"+actualForForgetPassword+"\n Expected For forget password\n"+expectedForForgetPassword);
 
     }
     @Test
     public void forgetPasswordForInvalidEmail() throws InterruptedException
     {
-        log=new loginObjects(driver,wait);
-        log.openLoginPage(url);
+        //Login_Object=new LoginObjects(driver);
+        Login_Object.openLoginPage(Url);
         Thread.sleep(2000);
-        actualForForgetPasswordForInvalidEmail=log.forgetPasswordForInvalidEmail(invalidEmail);
+        actualForForgetPasswordForInvalidEmail=Login_Object.forgetPasswordForInvalidEmail(invalidEmail);
         Assert.assertTrue(actualForForgetPasswordForInvalidEmail);
 
     }
@@ -71,16 +69,16 @@ public class LoginFlows extends Main{
     public void loginTestCasesHappyFlow()throws InterruptedException
     {
 
-        log=new loginObjects(driver,wait);
-        log.openLoginPage(url);
-       //Thread.sleep(2000);
+       // Login_Object=new LoginObjects(driver);
+       Login_Object.openLoginPage(Url);
+       Thread.sleep(2000);
 
-        log.enterDataForLogin(email,password);
-      //Thread.sleep(2000);
-        actualForLogin = log.submit_login_button();
-      // Thread.sleep(2000);
-        log.logoutButton();
-      // Thread.sleep(2000);
+        Login_Object.enterDataForLogin(email,password);
+      Thread.sleep(2000);
+        actualForLogin = Login_Object.submit_login_button();
+       Thread.sleep(2000);
+        Login_Object.logoutButton();
+      Thread.sleep(2000);
         Assert.assertTrue(actualForLogin);
         System.out.print("\n"+actualForLogin);
 
@@ -91,10 +89,10 @@ public class LoginFlows extends Main{
     @Test
     public void logintestcasesForInvalidEmail() throws InterruptedException
     {
-        log=new loginObjects(driver,wait);
-        log.openLoginPage(url);
+       // log=new LoginObjects(driver);
+         Login_Object.openLoginPage(Url);
         Thread.sleep(2000);
-        actualForInvalidEmailForLogin=log.enterDataForInvalidEmailForLogin(invalidEmail,password);
+        actualForInvalidEmailForLogin=Login_Object.enterDataForInvalidEmailForLogin(invalidEmail,password);
 
         Thread.sleep(2000);
         Assert.assertEquals(""+expectedForInvalidEmailForLogin,""+actualForInvalidEmailForLogin);
@@ -106,12 +104,12 @@ public class LoginFlows extends Main{
     @Test
     public void loginTestCasesForInvalidPassword() throws  InterruptedException
     {
-        log=new loginObjects(driver,wait);
-        log.openLoginPage(url);
+       // log=new LoginObjects(driver);
+        Login_Object.openLoginPage(Url);
 
         Thread.sleep(2000);
 
-        actualForInvalidPasswordForLogin=log.enterDateForInvalidPasswordForLogin(email,invalidPassowrd);
+        actualForInvalidPasswordForLogin=Login_Object.enterDateForInvalidPasswordForLogin(email,invalidPassowrd);
         Assert.assertEquals(""+expectedForInvalidPasswordForLogin,""+actualForInvalidPasswordForLogin);
         System.out.print("\n Actual For login Test Cases For Invalid Password\n"+expectedForInvalidPasswordForLogin+"\n Expected For login Test Cases For Invalid Password\n"+expectedForInvalidPasswordForLogin);
 

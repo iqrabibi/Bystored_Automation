@@ -1,10 +1,13 @@
-package Testcases;
+package TestCases;
 
 import General.Main;
 import PageObjects.RemovalsObjects;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+
+import static General.InitMethods.Url;
+import static General.InitMethods.Removals_Object;
 
 /**
  * Created by VenD on 4/19/2018.
@@ -12,8 +15,8 @@ import org.testng.annotations.Test;
 public class RemovalsFlows extends Main{
 
    // WebDriver driver;
-    RemovalsObjects ro;
-    String url=getUrl();
+   // RemovalsObjects ro;
+   //String url=getUrl();
     public String name="iqra";
     public String email="iqrabibi25@yahoo.com";
     public String invalidEmail="yahoo.com";
@@ -35,12 +38,12 @@ public class RemovalsFlows extends Main{
     public void removalstestCasesHappyFlow() throws InterruptedException
     {
 
-        ro = new RemovalsObjects(driver);
-        ro.openBrowser(url);
-        ro.enterDataforHappyFlow(name, email, phonenumber);
+       // ro = new RemovalsObjects(driver);
+       Removals_Object.openBrowser(Url);
+        Removals_Object.enterDataforHappyFlow(name, email, phonenumber);
         Thread.sleep(2000);
-        actualForRemovalhappyFlow = ro.submit();
-        Thread.sleep(2000);
+        actualForRemovalhappyFlow = Removals_Object.submit();
+        Thread.sleep(3000);
         Assert.assertEquals(""+actualForRemovalhappyFlow,""+expectedForRemovalHappyFlow);
         System.out.print("\n Actual For happy flows of Removals\n"+actualForRemovalhappyFlow+"\n Expected For happy flows of Removals \n"+expectedForRemovalHappyFlow);
 
@@ -52,10 +55,10 @@ public class RemovalsFlows extends Main{
     @Test
     public void removalForInvalidEmail() throws InterruptedException
     {
-        ro = new RemovalsObjects(driver);
-        ro.openBrowser(url);
+        //Removals_Object = new RemovalsObjects(driver);
+        Removals_Object.openBrowser(Url);
         Thread.sleep(2000);
-       actualForInvalidEmailForRemovals= ro.enterDataForInvalidEmail(name,invalidEmail,phonenumber);
+       actualForInvalidEmailForRemovals= Removals_Object.enterDataForInvalidEmail(name,invalidEmail,phonenumber);
 
         Thread.sleep(2000);
 
@@ -67,10 +70,10 @@ public class RemovalsFlows extends Main{
     @Test
     public void removalForInvalidPhoneNumber() throws InterruptedException
     {
-        ro = new RemovalsObjects(driver);
-        ro.openBrowser(url);
+        //Removals_Object = new RemovalsObjects(driver);
+       Removals_Object.openBrowser(Url);
         Thread.sleep(2000);
-        actualForInvalidPhoneNumberForRemovals= ro.enterDataForInvalidPhoneNumber(name,email,invalidPhoneNumber);
+        actualForInvalidPhoneNumberForRemovals= Removals_Object.enterDataForInvalidPhoneNumber(name,email,invalidPhoneNumber);
 
         Thread.sleep(2000);
 
@@ -82,10 +85,10 @@ public class RemovalsFlows extends Main{
     @Test
     public void removalClickHere() throws InterruptedException
     {
-        ro = new RemovalsObjects(driver);
-        ro.openBrowser(url);
+       // Removals_Object = new RemovalsObjects(driver);
+      Removals_Object.openBrowser(Url);
         Thread.sleep(2000);
-        actualForClickHere=ro.clickhere();
+        actualForClickHere=Removals_Object.clickhere();
        Assert.assertTrue(actualForClickHere);
 
 
