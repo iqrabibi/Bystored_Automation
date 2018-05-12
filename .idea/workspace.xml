@@ -12,36 +12,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_core_3_0_4.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xerial_sqlite_jdbc_3_8_11_1.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ru_qatools_commons_properties_2_0_RC6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extent-config.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/General/ApplicationConfigReader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/General/InitMethods.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/ApplicationConfig.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/PageObjects/loginObjects.java" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/LoginObjects.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Testcases/BusinessFlows.java" afterPath="$PROJECT_DIR$/src/main/java/TestCases/BusinessFlows.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Testcases/LoginFlows.java" afterPath="$PROJECT_DIR$/src/main/java/TestCases/LoginFlows.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Testcases/MyFinanceFlows.java" afterPath="$PROJECT_DIR$/src/main/java/TestCases/MyFinanceFlows.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Testcases/MyinfoFlows.java" afterPath="$PROJECT_DIR$/src/main/java/TestCases/MyinfoFlows.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Testcases/RemovalsFlows.java" afterPath="$PROJECT_DIR$/src/main/java/TestCases/RemovalsFlows.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/General/Main.class" afterPath="$PROJECT_DIR$/target/classes/General/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/PageObjects/BusinessPageObjects.class" afterPath="$PROJECT_DIR$/target/classes/PageObjects/BusinessPageObjects.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/PageObjects/MyFinanceObjects.class" afterPath="$PROJECT_DIR$/target/classes/PageObjects/MyFinanceObjects.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/PageObjects/MyInfoObjects.class" afterPath="$PROJECT_DIR$/target/classes/PageObjects/MyInfoObjects.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/PageObjects/RemovalsObjects.class" afterPath="$PROJECT_DIR$/target/classes/PageObjects/RemovalsObjects.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/PageObjects/loginObjects.class" afterPath="$PROJECT_DIR$/target/classes/PageObjects/loginObjects.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Testcases/BusinessFlows.class" afterPath="$PROJECT_DIR$/target/classes/Testcases/BusinessFlows.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Testcases/LoginFlows.class" afterPath="$PROJECT_DIR$/target/classes/Testcases/LoginFlows.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Testcases/MyFinanceFlows.class" afterPath="$PROJECT_DIR$/target/classes/Testcases/MyFinanceFlows.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Testcases/MyinfoFlows.class" afterPath="$PROJECT_DIR$/target/classes/Testcases/MyinfoFlows.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Testcases/RemovalsFlows.class" afterPath="$PROJECT_DIR$/target/classes/Testcases/RemovalsFlows.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fianl_Project_for_automation.iml" afterPath="$PROJECT_DIR$/fianl_Project_for_automation.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestNg.xml" afterPath="$PROJECT_DIR$/src/TestNg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/General/Main.java" afterPath="$PROJECT_DIR$/src/main/java/General/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/PageObjects/BusinessPageObjects.java" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/BusinessPageObjects.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/PageObjects/MyFinanceObjects.java" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/MyFinanceObjects.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/PageObjects/MyInfoObjects.java" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/MyInfoObjects.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/PageObjects/RemovalsObjects.java" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/RemovalsObjects.java" />
     </list>
     <ignored path="fianl_Project_for_automation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1078,7 +1049,7 @@
       <workItem from="1525927796172" duration="8020000" />
       <workItem from="1526014405843" duration="3151000" />
       <workItem from="1526019654272" duration="5590000" />
-      <workItem from="1526145283461" duration="109000" />
+      <workItem from="1526145283461" duration="867000" />
     </task>
     <task id="LOCAL-00001" summary="Dynamic url">
       <created>1524817573149</created>
@@ -1115,7 +1086,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525072831903</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Report generation">
+      <created>1526145433088</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1526145433088</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1151,7 +1129,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225466000" />
+    <option name="totallyTimeSpent" value="226224000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1163,11 +1141,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="2" width="1378" height="733" extended-state="0" />
+    <frame x="-7" y="2" width="1378" height="733" extended-state="1" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833335" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -1179,6 +1157,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24127465" sideWeight="0.4902439" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833335" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2065053" sideWeight="0.5097561" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1186,7 +1165,6 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833335" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833335" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1225,7 +1203,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Dynamic url" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dynamic url" />
+    <MESSAGE value="Report generation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Report generation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
